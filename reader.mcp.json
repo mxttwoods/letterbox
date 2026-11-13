@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "letterbox-reader": {
+      "command": "letterbox",
+      "args": ["mcp", "--reader"],
+      "env": { "LETTERBOX_AGENT": "claude-code" }
+    }
+  }
+}

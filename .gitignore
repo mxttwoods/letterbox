@@ -1,0 +1,4 @@
+/letterbox
+*.db
+*.db-wal
+*.db-shm
