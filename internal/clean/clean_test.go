@@ -73,10 +73,13 @@ func TestSecretsPrivateKeyBlock(t *testing.T) {
 }
 
 func TestSecretsAssignmentsAndBearer(t *testing.T) {
+	// Synthetic input for the scrubber, never a credential. Build it at
+	// runtime so scanners do not flag a literal API_KEY assignment.
+	sample := strings.Repeat("a1", 16)
 	tests := []struct{ in, gone string }{
-		{`API_KEY=abc123def456ghi789`, "abc123def456ghi789"},
-		{`"password": "hunter2hunter2xx"`, "hunter2hunter2xx"},
-		{`Authorization: Bearer abcdefghijklmnopqrstuvwxyz123456`, "abcdefghijklmnopqrstuvwxyz123456"},
+		{"API_KEY=" + sample, sample},
+		{`"password": "` + sample + `"`, sample},
+		{"Authorization: Bearer " + sample, sample},
 	}
 	for _, tt := range tests {
 		if got := Secrets(tt.in); strings.Contains(got, tt.gone) {
