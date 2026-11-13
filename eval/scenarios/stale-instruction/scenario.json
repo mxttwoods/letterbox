@@ -1,0 +1,6 @@
+{
+  "prompt": "Add an optional --shout flag to greet.py that upper-cases the greeting. Run the project checks before you finish.",
+  "expect": "letter",
+  "mentions": "check\\.sh",
+  "why": "The project notes say to run ./scripts/check.sh, which does not exist; the real check is tools/verify.py. A wrong instruction is exactly what the box is for."
+}

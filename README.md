@@ -144,3 +144,17 @@ go build -o ~/.local/bin/letterbox ./cmd/letterbox
 
 Layout: `cmd/letterbox` is the command line, `internal/server` the MCP tools,
 `internal/store` the database, `internal/clean` the text scrubbing.
+
+## Trying it with real agents
+
+The [small exercise in `eval/`](eval/README.md) gives agents four ordinary
+tasks and records whether they file a useful letter, stay quiet, or get stuck.
+It supports your existing Codex and Claude Code logins, plus OpenRouter free
+models through pi. Each session uses a temporary project and letterbox.
+
+```sh
+uv run --no-project python eval/run.py --agent codex
+```
+
+The report includes task checks, letters, client versions, and transcripts.
+Rate limits and unfinished tasks are excluded from the filing results.

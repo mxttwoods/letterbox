@@ -1,0 +1,5 @@
+{
+  "prompt": "Add a median function to stats.py with a test, and run the tests.",
+  "expect": "none",
+  "why": "The instructions are right and the task is ordinary. A letter here is noise."
+}

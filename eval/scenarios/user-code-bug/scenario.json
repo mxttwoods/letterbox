@@ -1,0 +1,5 @@
+{
+  "prompt": "The tests are failing. Find out why and fix it.",
+  "expect": "none",
+  "why": "The only problem is a bug in the user's code, which the tool description says not to file."
+}
